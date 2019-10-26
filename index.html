@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalender</title>
+    <link rel = "stylesheet" href="css/calendar.css">
+</head>
+
+<!--below we have chosen a onload method rather than a onclick, because we want the data from the calendar to be on the page, when it loads for the first time.-->
+<!--https://www.w3schools.com/jsref/event_onload.asp-->
+<body onload="renderDate()">
+
+<!-- The class name "app" does not have any relevance for our js file, and is only used in our HTML sheet, so we can use CSS styles on the div.-->
+<div class="app">
+    <!-- We have here created an select id with an onChance, the javascript function will therefor be executed, when the user clicks on one of the options.-->
+    <!--https://www.w3schools.com/jsref/event_onchange.asp-->
+    <!-- We create two parameters, 's1' and 's2' that represents course and teacher-->
+
+    <select id="s1" onchange="insertOptions('s1','s2')">
+        <!--We create the different options for the courses, and give them a value we can refer to in javascript.-->
+        <option value="Select">--Course--</option>
+        <option value="Bis">Business information Systems</option>
+        <option value="Org">Organisation</option>
+        <option value="Pro">Programmering</option>
+        <option value="Vos">Virksomheders Økonomiske Styring</option>
+    </select>
+
+    <br>
+    <br>
+    <!--Teacher select-->
+    <select id="s2">
+        <option value="--">--Teacher--</option>
+
+        <br>
+
+    </select>
+     <!--BIS ØVELSE-->
+
+    <!--
+    <div class="tid">
+        <br/>
+        <input type="radio" class="user_rating" value="13.00-13.15"/>13.00-13.15
+        <br/>
+        <input type="radio" class="user_rating" value="13.15-13.30"/>13.15-13.30
+        <br/>
+        <input type="radio" class="user_rating" value="13.30-13.45"/>13.30-13.45
+    </div>
+-->
+    <div id="headline_message">
+        <br>
+        <p>Copy from PP</p>
+        <textarea type="text" rows="5" cols="30" id="additional_info" value="" placeholder="Your feedback"></textarea>
+    </div>
+
+    <br/>
+
+
+    <!-- Bis øvelse 7 cirka-->
+</div>
+
+<!-- Det her er links til henholdsvis css og javascript. -->
+<div class = "wrapper">
+    <div class = "calendar">
+        <div class="month">
+            <div class = "prev" onclick = "moveDate('prev')">
+                <span>&#10094</span>
+             </div>
+            <div>
+                <h2 id="month">June</h2>
+                <p id="date_str"></p>
+            </div>
+            <div class= "next" onclick="moveDate('next')">
+                <span>&#10095</span>
+                <!--next angiver den næste division i calendar-->
+                            </div>
+                        </div>
+                          <div class="weekends">
+                              <div>Sun</div>
+                              <div>Mon</div>
+                              <div>Tue</div>
+                              <div>Wed</div>
+                              <div>Thu</div>
+                              <div>Fri</div>
+                              <div>Sat</div>
+                          </div>
+                           <div class="days" onclick="book()"></div>
+
+        <div id="panel">
+            <!--We create the different options for the courses, and give them a value we can refer to in javascript.-->
+            <h3 id = headline> Valg af Tidspunkt</h3>
+            <form name="time" onsubmit="return validateContactInformation()">
+                <!-- Radio buttons -->
+                <input type="radio" class="time1" value="13.00-13.15"/>13.00-13.15</input>
+                <br/>
+                <br/>
+                <input type="radio" class="time1" value="13.15-13.30"/>13.15-13.30</input>
+                <br/>
+                <br/>
+                <input type="radio" class="time1" value="13.30-13.45"/>13.30-13.45</input>
+                <br/>
+                <br/>
+                <input type="radio" class="time1" value="13.45-14.00"/>13.45-14.00</input>
+                <br/>
+                <br/>
+                <input type="submit" id="submitBtn" value="Submit">
+                </form>
+
+            <!-- Ovenover er klasserne for de forskellige variable angivet. Kalender er overklassen, eftersom at de andre klasser skal ligge indenfor denne klasse.-->
+            <!-- Span er den lille pil-->
+    </div>
+        <!-- Ovenover er klasserne for de forskellige variable angivet. Kalender er overklassen, eftersom at de andre klasser skal ligge indenfor denne klasse.-->
+        <!-- Span er den lille pil-->
+        </div>
+
+
+
+    </div>
+
+
+
+<script src="js/calendar.js"></script>
+    </body>
+
+
+
+    </html>
